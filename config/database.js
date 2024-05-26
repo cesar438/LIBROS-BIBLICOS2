@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('bibleadb', 'root', '', {
+const sequelize = new Sequelize('registrodb', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     define: {

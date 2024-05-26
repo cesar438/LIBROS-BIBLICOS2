@@ -1,31 +1,35 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Libro = require('./Libro');
-const Versiculos = sequelize.define('versiculos', {
-    idVersiculos :{
+const Electronicos = require('./Electronicos');
+const Modelo = sequelize.define('modelo', {
+    idModelo :{
         type : DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    idLibro : {
+    idEquipo : {
         type : DataTypes.INTEGER,
         allowNull : false,
         references : {
-            model : Libro,
-            key : 'idLibro'
+            model : Electronicos,
+            key : 'idEquipo'
         }
     },
-    capitulo : {
+    cantidad : {
         type : DataTypes.INTEGER,
         allowNull : false
     },
-    versiculo : {
+    modelo: {
         type : DataTypes.INTEGER,
         allowNull : false
     },
-    texto : {
+    detalle : {
         type : DataTypes.STRING,
         allowNull : false
     }
-});
-module.exports = Versiculos;
+}, { freezeTableName: true});
+// relacion 1 a 1
+Modelo.belongsTo(Electronicos, {foreignKey: 'idEquipo', as: 'electronicos'});
+// relacion 1 a muhcos
+Electronicos.hasMany(Modelo, {foreignKey : 'idEquipo', as: 'modelo'})
+module.exports = Modelo;
