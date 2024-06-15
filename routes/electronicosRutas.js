@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const electronicoControlador = require('../controlador/electronicosControlador');
+const electronicoControlador = require('../controllers/electronicosControlador');
 
 router.get('/busqueda', electronicoControlador.buscarElectronico);
 router.get('/', electronicoControlador.getTodosLosElectronicos);

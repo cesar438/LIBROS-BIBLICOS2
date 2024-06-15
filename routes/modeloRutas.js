@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const modeloControlador = require('../controlador/modeloControlador');
+const modeloControlador = require('../controllers/modeloControlador');
 
 router.get('/', modeloControlador.getTodosLosModelo);
 // CONSULTAS - REPORTES

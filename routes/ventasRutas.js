@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ventasControlador = require('../controlador/ventasControlador');
+const ventasControlador = require('../controllers/ventasControlador');
 
 router.get('/', ventasControlador.getTodosLosVentas);
 // CONSULTAS - REPORTES

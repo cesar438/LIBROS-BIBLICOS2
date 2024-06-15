@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const servicioControlador = require('../controlador/servicioControlador');
+const servicioControlador = require('../controllers/servicioControlador');
 
 router.get('/busqueda', servicioControlador.buscarEquipo);
 router.get('/', servicioControlador.getTodosLosEquipos);
